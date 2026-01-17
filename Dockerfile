@@ -17,7 +17,7 @@ RUN if [ -z "$CRONICLE_VERSION" ]; then \
 # install updates and security patches while installing new packages
 # Ref: https://github.com/docker/docs/pull/12571
 RUN        apk add --no-cache --upgrade \
-		nodejs npm git curl perl bash perl-pathtools tar procps nano tini python3
+		nodejs npm git curl perl bash perl-pathtools tar procps nano tini python3 rsync
 RUN        mkdir -p /opt/cronicle \
                 && cd /opt/cronicle \
                 && curl -L https://github.com/jhuckaby/Cronicle/archive/v${CRONICLE_VERSION}.tar.gz | tar zxvf - --strip-components 1 \
